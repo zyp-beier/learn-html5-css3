@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title滚动起来</title>
+</head>
+<body onload="newtext()">
+
+</body>
+</html>
+<script>
+  function newtext() {
+    let title = document.title
+    let arr = title.split("");
+    let first = arr.shift();
+    //将第一个元素添加到数组的最后
+    arr.push(first);
+    //将数组再组合成一个字符串
+    title = arr.join("");
+    document.title = title;
+    setTimeout("newtext()",500);
+  }
+  // let title=document.title
+  // let timerId
+  // function newtext() {
+  //   clearTimeout(timerId)
+  //   document.title=title.substring(1,title.length) + title.substring(0,1)
+  //   title=document.title.substring(0,title.length)
+  //   timerId = setTimeout("newtext()", 500)
+  // }
+  // newtext()
+</script>

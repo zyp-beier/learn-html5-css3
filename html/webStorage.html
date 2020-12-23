@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webStorage</title>
+</head>
+<body onload="init()">
+<div>
+<!--    <div>-->
+<!--        <h1>webStorage示例</h1>-->
+<!--        <p id="msg"></p>-->
+<!--        <input type="text" id="input">-->
+<!--        <input type="button" value="保存数据" onclick="saveStorage()">-->
+<!--        <input type="button" value="读取数据" onclick="loadStorage('msg')">-->
+<!--    </div>-->
+   <!-- <div>
+        <h1>简单的web留言本</h1>
+        <textarea name="" id="memo" cols="60" rows="10"></textarea>
+        <input type="button" value="添加数据" onclick="saveStorage2()">
+        <input type="button" value="清除数据" onclick="clearStorage2()">
+        <hr>
+        <p id="msg2"></p>
+    </div>-->
+<!--    ---------------------------------------使用webStorage做简易数据库示例-->
+   <!-- <div>
+        <h1>使用webStorage做简易数据库示例</h1>
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td>
+                    <input type="text" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>电话号码：</td>
+                <td>
+                    <input type="text" id="tel">
+                </td>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <td>
+                    <input type="text" id="memo">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="保存" onclick="saveStorage3()">
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <p>
+            检索: <input type="text" id="find">
+            <input type="button" value="检索" onclick="findStorage()">
+        </p>
+        <p id="msg3"></p>
+    </div>-->
+<!--    使用数据库实现web留言本------------------------------------------------->
+    <div>
+        <h1>使用数据库实现web留言本</h1>
+        <table>
+            <tr>
+                <td>姓名:</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>留言:</td>
+                <td><textarea name="" id="memo" cols="30" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="保存" onclick="saveData()"></textarea></td>
+            </tr>
+
+        </table>
+        <hr>
+        <table id="datatable" border="1"></table>
+        <p id="msg4"></p>
+    </div>
+</div>
+<script>
+    /*function saveStorage() {
+        let target = document.getElementById('input');
+        let str = target.value
+        // 临时保存，
+        // sessionStorage.setItem('str',str)
+        // 永久保存
+        localStorage.setItem('str',str)
+        target.value = null
+    }
+    function loadStorage() {
+        let msg = document.getElementById('msg')
+        // 临时保存，
+        // msg.innerText = sessionStorage.getItem('str')
+        // 永久保存
+        msg.innerText = localStorage.getItem('str')
+    }*/
+    /*function saveStorage2() {
+        let data = document.getElementById('memo').value
+        let time = new Date().getTime()
+        localStorage.setItem(time,data)
+        loadStorage2()
+    }
+    function loadStorage2() {
+        let result = '<table border="1">';
+        for(let i=0;i<localStorage.length;i++){
+            let key = localStorage.key(i)
+            let value = localStorage.getItem(key)
+            let date = new Date()
+            date.setTime(key)
+            let dateStr = date.toTimeString()
+            result = '<tr><td>'+value+'</td><td>' + dateStr + '</td></tr>'
+        }
+        result += '</table>'
+        let msg = document.getElementById('msg2')
+        msg.innerHTML = result
+    }
+    function clearStorage2() {
+        localStorage.clear()
+        loadStorage2()
+    }*/
+    /*function saveStorage3() {
+        let data = {}
+        data.name = document.getElementById('name').value
+        data.email = document.getElementById('email').value
+        data.tel = document.getElementById('tel').value
+        data.memo = document.getElementById('memo').value
+        let str = JSON.stringify(data)
+        localStorage.setItem(data.name,str)
+        alert('数据已保存')
+    }
+    function findStorage() {
+        let find = document.getElementById('find').value;
+        let str = localStorage.getItem(find)
+        let data = JSON.parse(str)
+        let result = '姓名'+ data.name + '<br>';
+        result += 'email' + data.email + '<br>'
+        result += '电话号码' + data.tel + '<br>'
+        result += '备注' + data.memo + '<br>'
+        let target = document.getElementById('msg3')
+        target.innerHTML = result
+    }*/
+
+    let datatable = null
+    let db = openDatabase('MyData','','My Database',102400);
+    function init() {
+        datatable = document.getElementById('datatable')
+        showAllData()
+    }
+    function showData(row) {
+        let tr = document.createElement('tr')
+        let td1 = document.createElement('td')
+        td1.innerHTML = row.name
+        let td2 = document.createElement('td')
+        td2.innerHTML = row.message
+        let td3 = document.createElement('td')
+        let t = new Date()
+        t.setTime(row.time)
+        td3.innerHTML = t.toLocaleDateString()+""+t.toLocaleTimeString()
+        tr.appendChild(td1)
+        tr.appendChild(td2)
+        tr.appendChild(td3)
+        datatable.appendChild(tr)
+    }
+    function removeAllData() {
+        for (let i = datatable.childNodes.length-1;i>=0;i--){
+            datatable.removeChild(datatable.childNodes[i])
+        }
+        let tr = document.createElement('tr')
+        let th1 = document.createElement('th')
+        let th2 = document.createElement('th')
+        let th3 = document.createElement('th')
+        th1.innerHTML = '姓名'
+        th2.innerHTML = '留言'
+        th3.innerHTML = '时间'
+        tr.appendChild(th1)
+        tr.appendChild(th2)
+        tr.appendChild(th3)
+        datatable.appendChild(tr)
+    }
+    function showAllData() {
+        db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS MsgData(name TEXT,message TEXT,time INTEGER)',[]);
+            tx.executeSql('SELECT * FROM MsgData', [], function (tx,rs) {
+                removeAllData()
+                for(let i=0; i<rs.rows.length;i++){
+                    showData(rs.rows.item(i))
+                }
+            })
+        })
+    }
+    function addData(name,message,time) {
+        db.transaction(function (tx) {
+            tx.executeSql('INSERT INTO MsgData VALUES(?,?,?)',[name,message,time],function (tx,rs) {
+                alert('成功保存数据了')
+            },function (tx,error) {
+                alert(error.source + "::" + error.message)
+            })
+        })
+    }
+    function saveData() {
+        let name = document.getElementById('name').value
+        let memo = document.getElementById('memo').value
+        let time = new Date().getTime()
+        addData(name,memo,time)
+        showAllData()
+    }
+</script>
+</body>
+</html>

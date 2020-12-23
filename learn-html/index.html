@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning</title>
+</head>
+<body>
+<div>
+<!--    语义化 重要-->
+<!--    标题语义化-->
+    <!--<div>
+        <h1>一级标题，一个页面最好只有一个，权重最高</h1>
+        <h2>h1～h6之间不要出现断层，搜索引擎对h1～h6标签比较敏感，尤其是h1和h2</h2>
+        <h3>不要用h1～h6来定义样式</h3>
+        <h4>不要用div来代替h1～h6</h4>
+    </div>-->
+<!--    图片语义化-->
+<!--    （1）alt属性和title属性。（2）figure元素和figcaption元素。-->
+   <!-- <div>
+        <img src="resource/16e4d9a4e55fa1f0.jpg" alt="图片描述（给搜索引擎看）" title="图片描述（给用户看）" width="20px" height="20px"/>
+        <figure>
+            <img src="resource/1.jpg" alt="" width="20px" height="20px"/>
+            <figcaption>这是图注</figcaption>
+        </figure>
+&lt;!&ndash;        figure元素用于包含图片和图注，figcaption元素用于表示图注文字&ndash;&gt;
+    </div>-->
+<!--    表格语义化-->
+    <!--<div>
+        <table>
+            <caption>表格标题</caption>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>电话</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>赵银萍</td>
+                    <td>18</td>
+                    <td>18574231029</td>
+                </tr>
+                <tr>
+                    <td>赵银萍</td>
+                    <td>18</td>
+                    <td>18574231029</td>
+                </tr>
+                <tr>
+                    <td>赵银萍</td>
+                    <td>18</td>
+                    <td>18574231029</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>(表头、表身和表脚)</td>
+                    <td>(表头、表身和表脚)</td>
+                    <td>(表头、表身和表脚)</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>-->
+<!--    表单语义化-->
+    <!--<form action="">
+        <fieldset>
+            <legend>表单的表头</legend>
+            <p>
+                <label for="name">姓名</label>
+                <input type="text" id="name">
+            </p>
+            <p>
+                <label for="psd">密码</label>
+                <input type="text" id="psd">
+            </p>
+            <input type="checkbox" id="remember-me" name="remember-me" />
+            <label for="remember-me">记住我</label>
+            <input type="submit" value="登录">
+        </fieldset>
+    </form>-->
+<!--    strong标签和em标签-->
+   <!-- <div>
+        <strong>加粗</strong>
+        <em>斜体</em>
+    </div>-->
+<!--    del标签和ins标签-->
+    <!--<div class="father">
+        &lt;!&ndash;默认16px&ndash;&gt;
+        <p>ysl口红</p> &lt;!&ndash;50%&ndash;&gt;
+        <p style="font-size: 8px">8px</p>
+        <p style="font-size: 16px">16px</p>
+        <p style="font-size: 24px">24px</p>
+        <p style="font-size: 3em">3em</p>
+        <p><del>$999.99</del></p>
+        <p><ins>$99</ins></p>
+        <div>
+            763798
+        </div>
+        <p class="brothers">
+            <span>
+                147258
+            </span>
+        </p>
+        <div>
+            南韩北韩
+        </div>
+        <div>
+            147852
+            <p>789</p>
+        </div>
+        <div>
+            南韩北韩123
+        </div>
+        <p>178626</p>
+    </div>
+    <div class="ele">
+        <ul>
+            <li>第一个元素</li>
+            <li>第二个元素</li>
+            <li>第三个元素</li>
+            <li>第四个元素</li>
+            <li>第五个元素</li>
+            <li>第六个元素</li>
+            <li>第七个元素</li>
+        </ul>
+    </div>-->
+<!--    margin叠加-->
+    <div>
+        <div class="one">
+            第一个
+        </div>
+        <div class="two">
+            第二个
+        </div>
+        <div style="border-bottom: 1px solid #ccc">
+            123
+        </div>
+        <div class="three">
+            <div class="four"></div>
+        </div>
+        <div class="five">147</div>
+    </div>
+<!--    负margin技巧-->
+    <div>
+        <div class="six">
+            <img src="resource/1.jpg" height="20" width="20" alt=""/>图片文字对齐
+        </div>
+       <!-- <div>
+            <div class="content">
+                <p>这是主体部分，自适应宽度</p>
+            </div>
+            <div class="sidebar">
+                <p>这是侧边栏部分,固定宽度</p>
+            </div>
+        </div>
+        <div>
+            <div id="father">
+                <div id="son"></div>
+            </div>
+        </div>-->
+    </div>
+    <div id="a">
+            3333
+    </div>
+</div>
+</body>
+<script>
+    setTimeout(function() {
+        const a = document.getElementById('a')
+        a.innerHTML = '147'
+    },2000)
+</script>
+<style>
+    /*css规范*/
+
+    /*一，css命名规范*/
+/*
+    1.reset.css 用于去除元素的默认样式，使得页面在所有浏览器中有统一的外观
+    2.global.css用于定义公共模块样式以及基础样式。常见的公共模块包括导航、底部信息栏等
+
+*/
+    /*二，css书写规范*/
+/*
+        （1）骆驼峰命名法，例如topMain、subLeftMenu。
+        （2）中划线命名法，例如top-main、sub-left-menu。
+        （3）下划线命名法，例如top_main、sub_left_menu。
+    建议
+        （1）使用英文命名。
+        （2）尽量不缩写。
+        （3）命名统一规范。
+        （4）命名时一般取父元素的class名作为前缀
+    命名
+        最外层 wrapper
+        头部 header
+        内容 content
+        侧栏 sidebar
+        栏目 column
+        导航条 nav
+        主体 main
+        左侧 main-left
+        菜单 menu
+        子菜单 submenu
+     结构(书写顺序)
+        影响文档流   display: flex;
+        盒子模型属性 width:100px;
+        文本性属性   font-size:15px;
+        装饰性属性   color: red;
+        其他属性
+
+*/
+    /*注释规范*/
+/*
+    顶部注释（文件基本信息）
+    模块注释（如 导航部分）
+    简单注释 （单行注释，多行注释）在注释内容最前面加上一个“！”，这样压缩工具就不会删除这条注释信息了。
+*/
+    /*CSS reset*/
+/*
+        重置样式表
+        http://meyerweb.com/eric/tools/css/reset/
+*/
+    /*margin叠加*/
+    /*相邻的两个块元素A和B，上面的为A，下面的为B。其中A定义了一个margin-bottom, B定义了一个margin-top，
+    A和B之间的垂直距离明显小于margin-bottom和margin-top相加之和*/
+    /*解决方法*/
+    /*
+    （1）为父盒子设置border，为外层添加border后父子盒子就不是真正意义上的贴合。
+    （2）为父盒子添加overflow：hidden；
+    （3）为父盒子设定padding值。
+    */
+    /*负margin技巧*/
+    /*
+        1.图片与文字对齐
+        2.自适应两列布局
+        3.元素垂直居中(绝对定位加负margin)
+    */
+    body{
+        font-size: 50%;/*16/2*/
+    }
+    table,thead,tbody,tfoot,tr,th,td{
+        border: 1px solid #cccf
+    }
+    /*.father p{*/
+    /*    border-bottom: 1px solid red;*/
+    /*}*/
+    .father>div { /*子代选择器*/
+        border-bottom: 1px solid darkred;
+    }
+    .brothers~div{/*兄弟标签 选取id为brothers的元素后面的所有兄弟元素div*/
+        color: green;
+    }
+    .brothers+div{/*选中元素后面（不包括前面）的某一个“相邻”的兄弟元素*/
+        color: yellow;
+    }
+    .ele{
+    }
+    .ele ul{
+        list-style: none;
+        /*width:100px;*/
+        display: flex;
+    }
+    .ele ul li+li{
+        /*border-top: 2px solid #dddddd;*/
+        border-left: 2px solid #dddddd;
+    }
+    .one,.two{
+        width:100px;
+        height: 100px;
+        border: 1px solid #532;
+    }
+    .one{
+        margin-bottom: 20px;
+    }
+    .two{
+        margin-top: 10px;
+    }
+    .three{
+        width:100px;
+        height:100px;
+        background-color: red;
+        /*margin-top: 10px;*/
+        /*padding:1px;*/
+        /*border: 1px solid #ccc;*/
+        /*overflow: hidden;*/
+    }
+    .four{
+        width:50px;
+        height:50px;
+        margin-top: 10px;
+        background-color: gray;
+    }
+    .five{
+        width:100px;
+        height:100px;
+        float: left;
+        border: 1px solid #532;
+    }
+    .six{
+        clear: both;
+        /*overflow: hidden;*/
+    }
+    .six img{
+        margin: 0 5px -5px 0;
+    }
+    .content, .sidebar{
+        float: left;
+    }
+    .content{
+        width:100%;
+        background-color: red;
+        margin-right:-300px;
+    }
+    .content p{
+        margin-right: 310px;
+    }
+    .sidebar{
+        width: 300px;
+        background-color: green;
+    }
+    #father{
+        position: relative;
+        width:200px;
+        height:160px;
+        border: 1px solid red;
+    }
+    #son{
+        position: absolute;
+        top:50%;
+        left:50%;
+        width:100px;
+        height:50px;
+        margin-top: -25px;
+        margin-left: -50px;
+        background-color: gray;
+    }
+</style>
+</html>

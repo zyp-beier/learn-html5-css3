@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    index页面
+    <button onclick="list()">查看列表</button>
+    <button onclick="about()">关于我们</button>
+    <button onclick="bottom()">hash</button>
+    <button onclick="replace()">替换</button>
+</div>
+</body>
+</html>
+<script>
+    list = function() {
+        window.history.pushState(null,null,'list.html')
+    }
+    function about() {
+        window.history.foward()
+    }
+    function bottom() {
+        window.history.pushState(null,null,'#bottom')
+
+    }
+    function replace() {
+        window.history.replaceState(null,null,'?one')
+
+    }
+</script>
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+</head>
+<body>
+<div>
+<!--
+position
+    （1）固定定位（fixed）。
+    （2）相对定位（relative）。
+    （3）绝对定位（absolute）。
+    （4）静态定位（static）。
+-->
+
+<!--
+    .1 子元素相对父元素定位
+    父元素定义“position:relative
+    子元素定义“position:absolute 配合top、bottom、left和right来定位
+    position:absolute”会将元素转换为块元素
+-->
+    <div>
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+<!--
+    .2 子元素相对祖先元素定位
+    祖先元素定义“position:relative
+    子元素定义“position:absolute 配合top、bottom、left和right来定位。
+    这与子元素相对于父元素定位是一样的道理。
+-->
+    <div class="yeye">
+        <div>
+
+        </div>
+        <div class="baba">
+            <div class="sunzi">
+
+            </div>
+        </div>
+    </div>
+<!--
+    z-index
+    z-index属性只有在元素定义“position:relative”“position:absolute或者“position:fixed”时才会被激活。
+    如果元素没有指定position属性值（除了static），则z-index属性无效。
+-->
+    <div class="wrapper">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+    </div>
+</div>
+</body>
+</html>
+<style>
+    .father{
+        width:500px;
+        height:500px;
+        background-color: rosybrown;
+        position: relative;
+    }
+    .son{
+        position: absolute;
+        top:100px;
+        right:100px;
+        background-color: royalblue;
+        width:100px;
+        height:100px;
+    }
+
+    .yeye{
+        width:400px;
+        height:400px;
+        position: relative;
+        background-color: #553322;
+    }
+    .sunzi{
+        width:100px;
+        height:100px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        margin:-50px 0 0 -50px;
+        background-color: #888888;
+    }
+    .wrapper div{
+        width:50px;
+        height:50px;
+    }
+    .a{
+        position: absolute;
+        top:10px;
+        left: 10px;
+        background-color: #3ef120;
+        z-index: 3;
+    }
+    .b{
+        position: absolute;
+        top:40px;
+        left:40px;
+        background-color: #553322;
+    }
+    .c{
+        position: absolute;
+        top:70px;
+        left: 70px;
+        background-color: #999999;
+    }
+</style>

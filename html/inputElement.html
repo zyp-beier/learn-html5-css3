@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inputElement</title>
+</head>
+<body>
+<div>
+   <div>
+       <label for="text">
+           text:
+           <input type="text" id="text">
+           <!--
+           以下写法都可以
+           <input type=text>
+           <input type='text'>
+           -->
+       </label>
+   </div>
+    <div>
+        <label for="range">
+            range:
+            <input type="range" id="range" value="50" min="30" max="100">
+            <ruby><rt>range类型表示必须输入一定范围内数字值的文本输入框</rt></ruby>
+        </label>
+    </div>
+   <div>
+       <label for="number">
+           number:
+           <input type="number" id="number">
+       </label>
+   </div>
+    <div>
+        <label for="search">
+            search:
+            <input type="search" id="search">
+            <ruby><rt>search类型与text类型仅仅在外观上有区别,外观为操作系统默认的圆角矩形文本框</rt></ruby>
+        </label>
+    </div>
+   <div>
+       <label for="email">
+           email:
+           <input type="email" id="email">
+           <ruby><rt>email类型表示必须输入E-mail地址的文本输入框。</rt></ruby>
+       </label>
+   </div>
+    <div>
+        <label for="tel">
+            tel:
+            <input type="tel" id="tel">
+            <ruby><rt>专用于电话,可以通过pattern属性来指定对于输入的电话号码格式的验证。</rt></ruby>
+        </label>
+    </div>
+    <div>
+        <label for="color">
+            color:
+            <input type="color" id="color">
+            <ruby><rt>颜色选择文本框</rt></ruby>
+        </label>
+    </div>
+    <div>
+        <label for="week">
+            week:
+            <input type="week" id="week">
+            <ruby><rt>用来输入周号的文本框</rt></ruby>
+        </label>
+    </div>
+<div>
+<!--
+week—选取周和年time—选取时间（小时和分钟）
+datetime—选取时间、日、月、年（UTC时间）
+datetime-local—选取时间、日、月、年（本地时间）
+-->
+        <label for="date">
+            date:
+            <input type="date" id="date">
+        </label>
+        <label for="month">
+            month:
+            <input type="month" id="month">
+        </label>
+        <label for="datetime-local">
+            datetime-local:
+            <input type="datetime-local" id="datetime-local">
+        </label>
+    </div>
+    <div>
+        <label for="url">
+            url:
+            <input type="url" id="url">
+            <ruby><rt>url类型表示必须输入URL地址的文本输入框。</rt></ruby>
+        </label>
+    </div>
+<!--    属性-->
+   <!-- <div>
+&lt;!&ndash;        到目前为止只有Opera 10浏览器支持这一属性 form id&ndash;&gt;
+        <form action="" id="form">
+&lt;!&ndash;           autofocus 一个页面上只能有一个控件具有该属性&ndash;&gt;
+            <input type="text" autofocus placeholder="请输入内容">
+            <input type="number" form="form" autofocus>
+            <input type="submit">
+            <input type="image" src="../resource/background11.jpg" value="提交" style="width: 30px; height: 20px">
+&lt;!&ndash;            list属性值为某个datalist元素的id。想要设定的值不在选择列表之内时，允许其自行输入&ndash;&gt;
+            <input type="text" name="greeting" list="greetings" autocomplete="on">
+            <datalist id="greetings" style="display: none">
+                <option value="goodMorning">GoodMorning</option>
+                <option value="hello">hello</option>
+                <option value="GoodAfternoon">GoodAfternoon</option>
+            </datalist>
+        </form>
+    </div>-->
+<!--    output-->
+    <!--<form action="" id="testForm">
+        请选择一个数值
+        <input type="range" min=0 max=100 step="5" name="range1">
+        <output onforminput="value=range1.value">50</output>
+    </form>-->
+<!--    验证-->
+    <form action="">
+<!--        required必填-->
+        <label for="name">
+            <input type="text" name="name" required id="name">
+        </label>
+<!--        pattern属性 将属性值设为某个格式的正则表达式，在提交时会检查其内容是否符合给定格式-->
+        <label for="phone">
+            <input type="text" pattern="[0-9][A-Z]{3}" placeholder="一个数字3个大写字母" id="phone">
+        </label>
+<!--        step属性控制input元素中的值增加或减少时的步幅-->
+        <label for="number1">
+            <input type="number" step="5" min="5" max="100" id="number1">
+        </label>
+        <label for="submit">
+            <input type="submit" value="提交" id="submit">
+        </label>
+    </form>
+</div>
+</body>
+</html>
+<style>
+    form input{
+        padding:10px 20px;
+    }
+</style>

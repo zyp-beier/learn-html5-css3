@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fileAPI</title>
+</head>
+<body>
+<div>
+<!--    file
+FileList对象表示用户选择的文件列表
+添加multiple属性，file控件内允许一次放置多个文件。
+-->
+    <!--<div>
+        <input type="file" id="file" multiple size="50">
+        <input type="button" onclick="showFileName()" value="文件上传">
+        <hr>
+    </div>-->
+<!--    Blob表示二进制原始数据，它提供一个slice方法，可以通过该方法访问到字节内部的原始数据块
+        size属性表示一个Blob对象的字节长度，
+        type属性表示Blob的MIME类型，如果是未知类型，则返回一个空字符串。
+-->
+   <!-- <div>
+        <input type="file" id="file1">
+        <input type="button" value="显示文件信息" onclick="showFileInfo()">
+        <button onclick="showFileInfo()">显示文件信息</button>
+        <p>文件字节长度 <span id="size"></span></p>
+        <p>文件类型 <span id="type"></span></p>
+        <hr>
+    </div>-->
+<!--
+判断文件类型
+accept
+限制文件类型
+-->
+    <!--<div>
+        <input type="file" id="file2" multiple accept="image/jpeg">
+        <input type="button" value="判断文件类型" onclick="filesType()">
+    </div>-->
+
+<!--  FileReader读取文件
+-->
+    <div>
+        <form action="">
+            <input type="file" id="files">
+            <input type="button" onclick="readAsDataURL()" value="读取图像">
+            <input type="button" onclick="readAsBinaryString()" value="读取二进制数据">
+            <input type="button" onclick="readAsText()" value="读取文本文件">
+        </form>
+        <div id="result">
+
+        </div>
+    </div>
+    <div>
+        <hr>
+        <p>
+            <label>
+                请选择一个图像文件
+                <input type="file" id="files3">
+                <input type="button" value="显示图像" onclick="readFile()">
+            </label>
+        </p>
+        <div id="result1">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    // function showFileName() {
+    //     var file = document.getElementById('file').files
+    //     console.log(file)
+    //     for(let i=0;i<file.length;i++){
+    //         alert(file[i].name)
+    //     }
+    // }
+    // function showFileInfo(){
+    //     let file1 = document.getElementById('file1').files[0];
+    //     let size = document.getElementById('size');
+    //     let type = document.getElementById('type')
+    //     size.innerText = file1.size
+    //     type.innerHTML = file1.type
+    // }
+    // function filesType() {
+    //     var file2 = document.getElementById('file2').files
+    //     console.log(file2)
+    //     for(let i=0; i<=file2.length;i++){
+    //         let type = file2[i].type;
+    //         if(type.indexOf('image')!==0){
+    //             alert(`文件${file2[i]}不是image`)
+    //         }else{
+    //             alert(`文件${file2[i]}已上传`)
+    //         }
+    //     }
+    // }
+    var result = document.getElementById('result');
+    var result1 = document.getElementById('result1');
+    var files = document.getElementById('files');
+    var files3 = document.getElementById('files3');
+    if(typeof FileReader == 'undefined'){
+        result.innerHTML = '<h1>您的浏览器不支持FileReader</h1>';
+        files.setAttribute('disabled','disabled')
+    }
+    //将文件以DataURL形式读入页面
+    function readAsDataURL () {
+        var file = document.getElementById('files').files[0];
+        if(file.type.indexOf('image')!==0){
+            alert('请选择image文件');
+            return false
+        }
+        //将文件以DataURL形式读入页面
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (file)=> {
+            console.log(this.result);
+            result.innerHTML = '<img src="'+reader.result+'" alt="">'
+        }
+    }
+    //将文件以二进制形式读入页面
+    function readAsBinaryString() {
+        var file = files.files[0];
+        console.log(file)
+        let reader = new FileReader();
+        reader.readAsBinaryString(file);
+        reader.onload = function (f) {
+            result.innerHTML = reader.result
+        }
+    }
+    //将文件以文本文件形式读入页面
+    function readAsText() {
+        var file = files.files[0]
+        let reader = new FileReader()
+        reader.readAsText(file)
+        reader.onload = (f) => {
+            result.innerHTML = reader.result
+        }
+    }
+    function readFile() {
+        let file = files3.files[0]
+        var reader = new FileReader()
+        reader.onload = (f) => {
+            result1.innerHTML = '<img src="'+reader.result+'" alt="">'
+            alert('load')
+        }
+        reader.onprogress = (f) => {
+            alert('about')
+        }
+        reader.onloadstart = (f) => {
+            alert('loadstart')
+        }
+        reader.onerror = (f) => {
+            alert('error')
+        }
+        reader.onloadend = (f) => {
+            alert('loadend')
+        }
+        reader.onprogress = (f) => {
+            alert('about')
+        }
+        reader.readAsDataURL(file)
+    }
+</script>

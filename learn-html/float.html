@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+</head>
+<body>
+<div>
+<!--    float
+    1）定义了“float:left”或“float:right”时，都会变成block类型。浮动元素表现为块元素效果，可以定义width、height、padding和margin。
+   可以使用margin-left或margin-right来定义浮动元素与其他元素之间的间距
+   （2）定义了“float:left”或“float:right”时，会脱离文档流，后面的元素会紧跟着填上空缺的位置。
+   清除浮动的是那种方法
+   （1）clear:both。
+   在后面添加一个空标签然后就clear:both()
+   （2）overflow:hidden。
+   “overflow:hidden”应用于浮动元素的父元素，而不是当前的浮动元素。（添加父元素,但会隐藏超出父元素的内容部分）
+   （3）：:after伪元素。
+
+   “clear:both”清除浮动会增加多余标签，“overflow:hidden”清除浮动会使得超出父元素部分隐藏。使用：:after伪元素来清除浮动，都不会有这些缺点
+-->
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+    <div id='wrapper' class="clearfix">
+        <div class="first"></div>
+        <div class="second"></div>
+    </div>
+</div>
+</body>
+</html>
+<style>
+    .father{
+        width:200px;
+        border: 1px solid salmon;
+        overflow: hidden;
+    }
+    .son1,.son2{
+        width:50px;
+        height:50px;
+        border: 1px solid saddlebrown;
+    }
+    .son1{
+        float: left;
+    }
+    .son2{
+        float: right;
+    }
+    /************************************/
+    .clearfix{
+        *zoom:1;
+    }
+    .clearfix::after{
+        clear:both;
+        content: '';
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+    /*****************************************/
+    #wrapper{
+        width: 200px;
+        border: 1px solid saddlebrown;
+    }
+    .first,.second{
+        width: 80px;
+        height:40px;
+        border: 1px saddlebrown solid;
+    }
+    .first{
+        float: left;
+    }
+    .second{
+        float: right;
+    }
+</style>

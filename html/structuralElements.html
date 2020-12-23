@@ -1,0 +1,106 @@
+<!--文档类型声明，并且必须位于HTML5文档的第一行，它告诉浏览器当前文档的类型。-->
+<!--触发浏览器标准模式-->
+<!DOCTYPE html>
+<!--<html>标签支持HTML5全局属性和manifest属性。manifest属性用于创建HTML5离线应用。-->
+<html lang="en">
+<head>
+<!--  定义文档元信息  说明文档的字符编码-->
+    <meta charset="UTF-8">
+<!--    定义网页文档的标题，显示在浏览器标题栏-->
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <a href="#">
+            <h1>支持这样写啊</h1>
+        </a>
+        <header>header[标题栏]</header>
+        <nav>nav[导航栏]
+            <ul>
+                <li><a href="#">链接</a></li>
+                <li><a href="#">链接</a></li>
+                <li><a href="#">链接</a></li>
+                <li><a href="#">链接</a></li>
+            </ul>
+        </nav>
+        <article>
+            正文
+        </article>
+        <main>
+            [主体部分]
+            <video src="../resource/video.mov" style="width: 50px;height: 30px">
+                您的浏览器不支持视频标签
+                <source src="../resource/video.mov">
+            </video>
+<!--            <embed src="../resource/audio.mp3" type="">-->
+        </main>
+        <aside>aside[侧边栏]</aside>
+        <footer>footer[页脚栏] 表示整个页面或页面中一个内容区块的脚注。一般来说，它会包含创作者的姓名、创作日期以及创作者联系信息。</footer>
+        <section>
+            section元素表示页面中的一个内容区块，比如章节、页眉、页脚或页面中的其他部分。
+        </section>
+        <hr>
+        <article>
+            <header>
+<!--                一个header元素通常包括至少一个heading元素（h1-h6),还可以包括nav元素。-->
+                <h1>苹果</h1>
+                <p>发表日期：<time pubdate> 2020/01/13</time></p>
+            </header>
+            <p>
+                article元素表示页面中的一块与上下文不相关的独立内容，譬如博客中的一篇文章或报纸中的一篇文章。
+            </p>
+            <article>
+                <header><h3>发表者：赵银萍</h3></header>
+                <p>
+                    <time pubdate datetime="2020-01-13"></time>
+                    1小时前
+                </p>
+            </article>
+            <footer>
+                <p><small>著作权归赵银萍所有</small></p>
+            </footer>
+        </article>
+        <hr>
+        <aside>
+            aside元素表示article元素的内容之外的、与article元素的内容相关的辅助信息。
+        </aside>
+        <mark>mark元素主要用来在视觉上向用户呈现那些需要突出显示或高亮显示的文字。mark元素的一个比较典型的应用就是在搜索结果中向用户高亮显示搜索关键词。</mark>
+        <progress>progress元素表示运行中的进程，可以使用progress元素来显示JavaScript中耗费时间的函数的进程。</progress>
+        <meter>不知道</meter>
+        <div>
+            <time>time元素表示日期或时间，也可以同时表示两者 2020/01/13</time>
+        </div>
+        <ruby><rt>ruby元素表示ruby注释（中文注音或字符）</rt></ruby>
+        <p>zheshiyigepbiaoqianzheshiyigepbiaoqian <wbr>zheshiyigepbiaoqianzheshiyigepbiaoqianzheshiyigepbiaoqianzheshiyigepbiaoqianzheshiyigepbiaoqian</p>
+        <command onclack="cut()" label="cut"></command>
+        <details>
+            <summary>html5</summary>
+            This document teaches you everything you have to learn about HTML5
+        </details>
+        <datalist>datalist</datalist>
+        <datagrid>
+            datagrid元素表示可选数据的列表，它以树形列表的形式来显示。
+        </datagrid>
+        <output>output元素表示不同类型的输出，比如脚本的输出。 </output>
+        <menu>
+            menu元素表示菜单列表。当希望列出表单控件时使用该标签。
+            <li>111</li>
+            <li>111</li>
+            <li>111</li>
+            <li>111</li>
+        </menu>
+        <div>
+            <time datetime="2020-11-13">2020-11-13</time>
+            <time datetime="2020-11-13">2020-11-13</time>
+            <time datetime="2020-11-13">2020-11-13</time>
+            <time datetime="2010-11-13T20:00Z">这是一个时间元素,晚上8点</time>
+        </div>
+        <footer>
+            <address>
+                <a href="#">联系信息</a>
+                <a href="#">赵银萍</a>
+            </address>
+        </footer>
+    </div>
+</body>
+</html>

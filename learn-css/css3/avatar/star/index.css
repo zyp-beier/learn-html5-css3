@@ -1,0 +1,63 @@
+/*.star-rating {
+    display: flex;
+	flex-direction: row-reverse;
+}
+input{
+     display: none;
+    width: 30px;
+		height: 30px;
+		appearance: none;
+		cursor: pointer;
+		line-height: 30px;
+		text-align: center;
+		font-size: 30px;
+		transition: all 300ms;
+}
+input ::after{
+    color: red;
+    content: "☆";
+    transition: all 300ms;
+}
+
+input:hover{
+    transform: scale(1.2)
+}
+
+input:checked,input:hover::after {
+    color: red;
+    content: "❤";
+}*/
+
+
+
+
+
+
+.star-rating {
+	display: flex;
+    flex-direction: row-reverse;
+}
+	input {
+		width: 30px;
+		height: 30px;
+		appearance: none;
+		cursor: pointer;
+		line-height: 30px;
+		text-align: center;
+		font-size: 30px;
+		transition: all 300ms;
+    }
+    input::after {
+        color: purple;
+        content: "☆";
+        transition: all 300ms;
+    }
+    input:hover {
+        transform: scale(1.2);
+    }
+    input:checked,input:hover input ::after, input  ~ input::after {
+        
+        color: red;
+         content: "★";
+        
+    }

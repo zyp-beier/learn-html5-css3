@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+</head>
+<body>
+<div>
+<!--    单选框或复选框与文字默认情况下是以vertical-align:baseline的方式对齐的,这也是导致单选框或复选框与文字在垂直方向不居中对齐的原因,使用vertical-align属性来解决-->
+    <div>
+        <p id="p1">
+            <input type="radio" id="radio1"><label for="radio1">单选框1</label>
+            <input type="checkbox" id="checkbox1"><label for="checkbox1">多选框1</label>
+        </p>
+        <p id="p2">
+            <input type="radio" id="radio2"><label for="radio2">单选框2</label>
+            <input type="checkbox" id="checkbox2"><label for="checkbox2">多选框2</label>
+        </p>
+    </div>
+    （1）固定大小，禁用拖动。
+<!--    textarea
+使用min-width和min-height来定义textarea的最小宽度和最大高度
+resize:none
+（2）在chrome、Firefox和IE实现相同的外观。
+-->
+    <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+<!--    表单对齐-->
+    <div>
+        <form action="">
+            <p>
+                <label for="tel">手机号</label>
+                <input type="text" id="tel">
+            </p>
+            <p>
+                <label for="pwd">密码</label>
+                <input type="password" id="pwd">
+            </p>
+            <p>
+                <label for="verifyCode">验证码</label>
+                <input type="text" id="verifyCode">
+                <input type="submit" id="submit">
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<style>
+    /*#p1{*/
+    /*    font-size: 12px;*/
+    /*}*/
+    /*#p1 input{*/
+    /*    vertical-align: -2px;*/
+    /*}*/
+    /*#p2{*/
+    /*    font-size: 24px;*/
+    /*}*/
+    /*#p2 input{*/
+    /*    vertical-align: 2px;*/
+    /*}*/
+    /*textarea{*/
+    /*    width:300px;*/
+    /*    height:150px;*/
+    /*    max-width: 500px;*/
+    /*    max-height: 500px;*/
+    /*    resize: none;*/
+    /*    overflow: auto;*/
+    /*}*/
+
+
+    form{
+        width:320px;
+        font-family: Arial;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    p{
+        overflow: hidden;
+    }
+    label{
+        float: left;
+        width: 60px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 10px;
+        text-align: right;
+    }
+    input:not(#submit){
+        float: left;
+        height:16px;
+        padding:10px;
+        border: 1px #606060 solid;
+    }
+    #tel,#pwd{
+        width: 228px;
+    }
+    #verifyCode{
+        width: 118px;
+        margin-right: 10px;
+    }
+    #submit{
+        width:100px;
+        height: 40px;
+        border: 1px solid #553322;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
+</style>

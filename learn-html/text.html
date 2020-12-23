@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    .logo{
+        background:url("./resource/heyMomLogo.png") no-repeat;
+        background-size: cover;
+        width:60px;
+        height:60px;
+        overflow: hidden;
+        text-indent: -9999px;
+    }
+    .aligned{
+        width: 200px;
+        height:200px;
+        background-color: #553322;
+        text-align: center;
+    }
+    .aligned div{
+        display: inline-block;
+        width: 100px;
+        height:100px;
+        background-color: rebeccapurple;
+    }
+    .vertical-wrap img{
+
+    }
+    #img1{
+        vertical-align: top;
+    }
+    #img2{
+        vertical-align: middle;
+    }
+    #img3{
+        vertical-align: bottom;
+    }
+    #img4{
+        vertical-align: baseline;
+    }
+    .vertical-item{
+        width:200px;
+        height: 200px;
+        border: 1px salmon solid;
+        padding:0;
+        display: table-cell;
+        /*display: inline-block;*/
+        vertical-align: bottom;
+    }
+</style>
+<body>
+<div>
+<!-- logo使用h1的背景图片实现，优化seo，使用test-index：-9999px使文字缩进到看不见-->
+    <div>
+        <h1 class="logo">HeyMom</h1>
+    </div>
+<!-- text-align对文字、行内元素以及inline-block元素起作用，但对块元素不起作用
+    可以先将div转化为inline-block元素，然后再使用“text-align:center”
+-->
+    <!--“text-align:center；”与“margin:0auto；”是最常见的两种水平居中方式
+    （1）“text-align:center；”实现的是文字、inline元素以及inline-block元素的水平居中。
+    （2）“margin:0 auto；”实现的是块元素的水平居中。
+    （3）“text-align:center；”在父元素中定义，“margin:0 auto；”在当前元素中定义。-->
+    <div>
+        <div class="aligned">
+            <div></div>
+        </div>
+    </div>
+<!--vertical vertical-align属性对块无效
+解决方法
+先为div定义display:table-cell
+再使用vertical-align:middle
+table-cell，inline,inline-block使用vertical的区别
+（1）inline元素和inline-block元素的vertical-align是针对周围的元素来说的，vertical定义的是周围元素相对于当前元素的对齐方式。
+（2）table-cell元素的vertical-align属性是针对自身而言。vertical-align定义的是内部子元素相对于自身的对齐方式。
+-->
+    <div class="vertical-wrap">
+        这是一段文字<img src="resource/16e4d9a4e55fa1f0.jpg" id="img1" height="79" width="80" alt=""/> (<strong>top</strong>)<hr/>
+        这是一段文字<img src="resource/16e4d9a4e55fa1f0.jpg" id="img2" height="79" width="80" alt=""/> (<strong>middle</strong>)<hr/>
+        这是一段文字<img src="resource/16e4d9a4e55fa1f0.jpg" id="img3" height="79" width="80" alt=""/> (<strong>bottom</strong>)<hr/>
+        这是一段文字<img src="resource/16e4d9a4e55fa1f0.jpg" id="img4" height="79" width="80" alt=""/> (<strong>baseline</strong>)<hr/>
+        <div class="vertical-item">
+            <img src="resource/16e4d9a4e55fa1f0.jpg" height="79" width="80" alt=""/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

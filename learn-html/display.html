@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*.one,.two,.three{*/
+    /*    display: inline-block;*/
+    /*    width:200px;*/
+    /*    height:200px;*/
+    /*    border: 1px solid #553322;*/
+    /*}*/
+    .one{
+        background-color:rebeccapurple;
+    }
+    .two{
+        background-color: rosybrown;
+        /*display: none;*/
+        /*visibility: hidden;*/
+    }
+    .three{
+        /*background-color: royalblue;*/
+        /*font-size: 0;*/
+    }
+    .three div{
+        /*display: inline-block;*/
+        /*border: 1px solid #553322;*/
+        /*width:100px;*/
+        /*height:150px;*/
+    }
+    .three-item{
+        font-size: 0;
+    }
+    .five{
+
+    }
+    .five div{
+        display: table-cell;
+        vertical-align: middle;
+        width:150px;
+        height:150px;
+        border: 1px solid #553322;
+        text-align: center;
+    }
+    div img{
+        vertical-align: middle;
+    }
+    div + div{
+        border-left: none;
+    }
+    .layout{
+        display: table-row;
+    }
+    .img-box{
+        width:50%;
+        display: table-cell;
+        text-align: center; /*水平剧中哦*/
+        vertical-align: middle; /*垂直居中*/
+        border: 1px solid #553322;
+    }
+    .test-box{
+        width:400px;
+        display: table-cell;
+        vertical-align: center;
+        border: 1px solid #553322;
+    }
+    .wrapper{
+        list-style: none;
+        display: table;
+        width:100%;
+        padding: 0;
+    }
+    .item{
+        display: table-cell;
+        height:50px;
+        background-color: #fff;
+        border: 1px solid salmon;
+    }
+</style>
+<body>
+<div>
+<!--    display-->
+<!--
+    display:block独占一行,内部可以容纳其他块元素或行元素,可以定义宽高，margin
+    display:inline可以与其他行内元素位于同一行,不可以容纳块元素,无法定义宽高，可以定义margin-left和margin-right，无法定义margin-top和margin-bottom
+    display:inline-block可以定义width和height。可以与其他行内元素位于同一行。img元素和input元素。会有间隙 解决方法font-size:0
+
+-->
+<!--    display-->
+    <div>
+        <div class="one">
+
+        </div>
+        <div class="two">
+
+        </div>
+        <div class="three">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="three-item">
+                <img src="resource/16e4d9a4e55fa1f0.jpg" height="79" width="80" alt=""/>
+                <img src="resource/16e4d9a4e55fa1f0.jpg" height="79" width="80" alt=""/>
+                <img src="resource/16e4d9a4e55fa1f0.jpg" height="79" width="80" alt=""/>
+            </div>
+        </div>
+       <!-- <div class="five">
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+            <div><img src="resource/1.jpg" height="100" width="108" alt="" /></div>
+        </div>-->
+        <!--<div class="layout">
+            <div class="img-box">
+                <img src="resource/16e4d9a4e55fa1f0.jpg" height="79" width="80" alt=""/>
+            </div>
+            <div class="test-box">
+                <p>
+                    display:block独占一行,内部可以容纳其他块元素或行元素,可以定义宽高，margin display:inline可以与其他行内元素位于同一行,不可以容纳块元素,无法定义宽高，可以定义margin-left和margin-right，无法定义margin-top和margin-bottom display:inline-block可以定义width和height。可以与其他行内元素位于同一行。img元素和input元素。
+                </p>
+            </div>
+        </div>-->
+        <!--<ul class="wrapper">
+            <li class="item">display:table-cell</li>
+            <li class="item">display:table-cell</li>
+            <li class="item">display:table-cell</li>
+            <li class="item">display:table-cell</li>
+            <li class="item">display:table-cell</li>
+            <li class="item">display:table-cell</li>
+            <li class="item">display:table-cell</li>
+        </ul>-->
+    </div>
+</div>
+</body>
+</html>

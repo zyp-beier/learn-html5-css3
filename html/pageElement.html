@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pageElement</title>
+</head>
+<body>
+<div>
+    <div>
+       <!-- figure元素也是一种元素的组合，带有可选标题。
+       用来表示网页上一块独立的内容，将其从网页上移除后不会对网页上的其他内容产生任何影响。
+        figure元素所表示的内容可以是图片、统计图或代码示例。
+
+        figcaption元素表示figure元素的标题，它从属于figure元素，必须书写在figure元素内部
+        一个figure元素内最多只允许放置一个figcaption元素,但允许放置多个其他元素。-->
+        <figure>
+            <img src="../resource/background11.jpg" height="238" width="563" alt=""/>
+            <figcaption>figcaption元素表示figure元素的标题</figcaption>
+        </figure>
+<!--        details将画面上局部区域进行展开或收缩的方法-->
+        <details>
+            <summary>
+                精武风云
+            </summary>
+            <p>
+                summary元素从属于details元素，用鼠标点击summary元素中的内容文字时，details元素中的其他所有从属元素将会展开或收缩。如果details元素内没有summary元素，浏览器会提供默认文字以供点击
+            </p>
+        </details>
+        <details>
+            <options>123</options>
+            <options>456</options>
+            <options>789</options>
+        </details>
+<!--        mark元素表示页面中需要突出显示或高亮显示的-->
+        <mark>它的目的是吸引当前用户的注意力，提供给用户作参考，希望能够对用户有帮助。而strong是原文作者用来强调一段文字的重要性的，譬如警告信息、错误信息等，em元素是作者为了突出文章重点而使用的</mark>
+<!--        value属性表示已经完成了多少工作量，max属性表示总共有多少工作量-->
+        <section>
+            <h2>progress元素的使用示例</h2>
+            <p>完成百分比 <progress id="p" max="100"> <span>0</span>% </progress></p>
+            <input type="button" onclick="buttonOnclick" value="点击">
+        </section>
+<!--        meter元素表示规定范围内的数量值-->
+        <p>
+            磁盘使用量<meter value="40" min="0" max="160" > 40/160</meter>GB
+        </p>
+        <p>
+            你的得分是<meter value="91" min="0" max="100" low="40" high="90" optimum="100"> A+</meter>
+        </p>
+        <p>
+            <meter>80%</meter>
+            <meter>3/4</meter>
+        </p>
+<!--        ol添加了start属性与reversed属性
+            使用star属性来自定义编号的初始值
+            reversed属性倒叙
+-->
+        <div>
+            <ol start="5" reversed>
+                <li>花式花式</li>
+                <li>花式花式</li>
+                <li>花式花式</li>
+                <li>花式花式</li>
+                <li>花式花式</li>
+                <li>花式花式</li>
+            </ol>
+        </div>
+        <div>
+            <dl>
+                <dt><dfn>RSS</dfn></dt>
+                <dd>重新定义后的dl列表包含多个带名字的列表项。每一项包含一条或多条带名字的dt元素，用来表示术语，dt元素后面紧跟一个或多个dd元素，用来表示定义。在一个元素内，不允许有相同名字的dt元素，不允许有重复的术语</dd>
+                <dt><dfn>RSS</dfn></dt>
+                <dd>重新定义后的dl列表包含多个带名字的列表项。每一项包含一条或多条带名字的dt元素，用来表示术语，dt元素后面紧跟一个或多个dd元素，用来表示定义。在一个元素内，不允许有相同名字的dt元素，不允许有重复的术语</dd>
+            </dl>
+            <dl>
+                <dt>作者</dt>
+               <dd>dl列表也可以用来表示一些页面或article元素中内容的辅助信息</dd>
+            </dl>
+        </div>
+<!--        cite元素表示作品（例如一本书、一篇文章、一首歌曲等）的标题-->
+        <div>
+            我最喜欢的电影是刘昊然的<cite>唐人街探案</cite>
+            <small>字体会变小吗</small>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+   //  function buttonOnclick() {
+   //      var progressBar = document.getElementById('p')
+   //      progressBar.getElementsByTagName("span")[0].textContent = '0'
+   //      for(let i = 0;i<=100;i++){
+   //          updateProgress(i);
+   //      }
+   //  }
+   // function updateProgress(i) {
+   //      var progress = document.getElementById('p')
+   //      progress.value = i;
+   //     progress.getElementsByTagName("span")[0].textContent = i
+   //  }
+</script>

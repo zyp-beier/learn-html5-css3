@@ -1,0 +1,139 @@
+<!-- Always look at the bright side of life -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.sass">
+    <link rel="stylesheet" href="login.scss">
+    <style>
+        .week-day .week{
+            /* width:100px;
+            text-align-last: justify */
+        }
+        .week-day{
+            width:100px;
+            text-align-last: justify
+        }
+
+        .tooltips{
+            position: relative;
+            display: block;
+            width:50px;
+            height:20px;
+            background:#000;
+            line-height: 20px;
+            color:#ffffff;
+            padding:10px;
+            text-align: center;
+            border-radius: 10px; 
+        }
+        .tooltips ::after{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background: rgba(#000,0.5);
+            text-align: center;
+            font-size: 12px;
+            content: 'attr(data-msg)';
+            transform: all 300ms;
+        }
+        .tooltips:hover::after {
+		    left: calc(100% + 20px);
+		    opacity: 1;
+        }
+        .tooltips[href]:empty::before {
+		    content: attr(href);
+	    }   
+	    .tooltips[href]:empty:hover::after {
+		    display: none;
+	    }
+
+
+
+    html {
+        /* filter: grayscale(100%); */
+        filter: grayscale(100%)
+    }
+    .mourning-mode img {
+		width: 400px;
+	}
+
+    </style>
+</head>
+<body>
+    <!-- <div class='week-day'>
+        <div class='week'><span>用户名</span>:</div>
+        <div class='week'><span>密码</span>:</div>
+        <div class='week'>生<span>日:</span></div>
+        <div class='week'><span>手机号</span>:</div>
+        <div class='week'><span>邮箱密码</span>:</div>
+        <div class='week'><span>你是孩子的</span>:</div>
+    </div>
+    <div>
+        <a href="#" class="tooltips" data-msg='word'>hello</a>
+    </div>
+    <form class="form-validation">
+        <div>
+            <label>名字</label>
+            <input type="text" placeholder="请输入你的名字(1到10个中文)" pattern="^[\u4e00-\u9fa5]{1,10}$" required>
+        </div>
+        <div>
+            <label>手机</label>
+            <input type="text" placeholder="请输入你的手机" pattern="^1[3456789]\d{9}$" required>
+        </div>
+        <div>
+            <label>简介</label>
+            <textarea required></textarea>
+        </div>
+    </form> -->
+
+
+
+
+
+    <!-- <div class="bruce flex-ct-x">
+            <form class="bubble-distribution">
+                <h3>注册</h3>
+                <div class="accout">
+                    <input type="text" placeholder="请输入手机或邮箱" pattern="^1[3456789]\d{9}$|^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$" required>
+                    <img src="https://b-gold-cdn.xitu.io/v3/static/img/greeting.1415c1c.png">
+                </div>
+                <div class="password">
+                    <input type="password" placeholder="请输入密码(6到20位字符)" pattern="^[\dA-Za-z_]{6,20}$" required>
+                    <img src="https://b-gold-cdn.xitu.io/v3/static/img/blindfold.58ce423.png">
+                </div>
+                <div class="code">
+                    <input type="text" placeholder="请输入邀请码(6位数字)" pattern="^[\d]{6}$" maxLength="6" required>
+                    <button type="button">查询</button>
+                    <img src="https://b-gold-cdn.xitu.io/v3/static/img/greeting.1415c1c.png">
+                </div>
+                <img src="https://b-gold-cdn.xitu.io/v3/static/img/normal.0447fe9.png">
+                <ul>
+                    <li>
+                        <input type="radio" name="sex" id="male">
+                        <label for="male">Boy</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="sex" id="female">
+                        <label for="female">Girl</label>
+                    </li>
+                </ul>
+                <button type="button">注册</button>
+            </form>
+        </div> -->
+        <div class="bruce flex-ct-x">
+                <div class="mourning-mode">
+                    <!-- <img src="https://yangzw.vip/static/codepen/car.jpg"> -->
+                    <img src="img/1..jpg" alt="">
+                </div>
+            </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

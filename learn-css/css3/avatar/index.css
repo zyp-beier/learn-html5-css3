@@ -1,0 +1,22 @@
+.avatar{
+    width: 65px;
+    height:65px;
+    background:url('img/2.jpg') no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+}
+
+.avatar:after{
+    content: '';
+    background:inherit;
+    position: absolute;
+    top:10%;
+    left:0;
+    width:65px;
+    height:65px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(6px) brightness(80%) opacity(.8);
+    transform: scale(.95);
+}
